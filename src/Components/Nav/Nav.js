@@ -4,6 +4,7 @@ import homeLogo from './../../assets/home_logo.png';
 import newLogo from './../../assets/new_logo.png';
 import logoutLogo from './../../assets/shut_down.png';
 import './Nav.css';
+import {Link,withRouter} from 'react-router-dom'
 
 class Nav extends Component {
   constructor(props) {
@@ -19,12 +20,12 @@ class Nav extends Component {
 
   getUser() {
     axios.get('/api/auth/me')
-    .then(res => 'replace this string with something useful')
+    .then(res => `does a user session exist? ${res.data}`)
   }
   
   logout() {
     axios.post('/api/auth/logout')
-      .then(_ => 'replace this string with something else')
+      .then(_ => 'user has logged out')
   }
   
   render() {
@@ -35,12 +36,12 @@ class Nav extends Component {
             <p>placeholder username</p>
           </div>
           <div className='nav-links'>
-            <img className='nav-img' src={homeLogo} alt='home' />
-            <img className='nav-img' src={newLogo} alt='new post' />
+            <Link to="/dash"><img className='nav-img' src={homeLogo} alt='home' /></Link>
+            <Link to="/form"><img className='nav-img' src={newLogo} alt='new post' /></Link>
           </div>
-          <img className='nav-img logout' src={logoutLogo} alt='logout' />
+          <Link to="/" onClick={this.logout}><img className='nav-img logout' src={logoutLogo} alt='logout' /></Link>
         </div>
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

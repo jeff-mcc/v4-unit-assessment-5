@@ -8,7 +8,7 @@ module.exports = {
         if(checkUsername){
             return res.status(409).send("Username already registered by another user")
         }
-        const salt = bcrypt.genSaltSync(15);
+        const salt = bcrypt.genSaltSync(5);
         const hash = bcrypt.hashSync(password,salt);
         const profilePic = `https://robohash.org/${username}.png`;
         const [user] = await db.user.create_user(username,hash,profilePic);
