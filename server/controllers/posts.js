@@ -44,6 +44,7 @@ module.exports = {
       const date = new Date;
       if(id){
         db.post.create_post(id,title,img,content,date)
+        // .then(posts=>res.status(200).send(posts))
         return res.sendStatus(200)
       }
       return res.sendStatus(403)

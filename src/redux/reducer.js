@@ -14,7 +14,7 @@ export function updateUser(param){
         type: UPDATE_USER,
         payload: {
             username: param.username,
-            profilePic: param.profilePic
+            profilePic: param.profile_pic
         }
     }
 }
