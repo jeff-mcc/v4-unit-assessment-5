@@ -43,3 +43,23 @@
     font-family: 'Open Sans','Courier New', Courier, monospace;
     font-size: 12px;
   }
+
+  @media(max-height: 830px){
+    .form-img-prev{
+      height: 230px;
+    }
+  }
+
+  @media(max-height: 750px){
+    .form-img-prev{
+      height: 180px;
+      margin-top: 10px;
+      /* width: 95%; */
+    }
+    .form-input-box{
+      margin: 15px auto;
+    }
+    .title{
+      margin-bottom: 0;
+    }
+  }

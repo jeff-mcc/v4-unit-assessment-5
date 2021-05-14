@@ -79,7 +79,7 @@
     }
   }
 
-  @media(max-width: 410px){
+  @media(max-width: 450px){
     .auth-input-box {
       width: 80vw;
     }
@@ -89,5 +89,9 @@
   }
 
   @media(max-width: 500px){
-    
+    .auth-button-container{
+      /* justify-content: space-evenly; */
+      width: 90vw;
+      margin: 4vh;
+    }
   }
